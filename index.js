@@ -70,6 +70,19 @@ app.post('/api/seo-aeo-cluster', x402.requirePayment("50000"), async (req, res) 
     }
 });
 
+// Landing page simple para verificar que el servidor está vivo en el navegador
+app.get('/', (req, res) => {
+    res.send(`
+        <div style="font-family: sans-serif; text-align: center; padding: 50px;">
+            <h1 style="color: #6366f1;">💎 The Gem Smith MCP is ONLINE</h1>
+            <p>El motor de AEO/SEO está funcionando correctamente.</p>
+            <p style="color: #666;">Nota: Los endpoints de IA están protegidos por el protocolo x402.</p>
+            <hr style="width: 200px; margin: 20px auto; border: 0; border-top: 1px solid #eee;">
+            <small style="color: #999;">Tesorería: 0x8aaBAB75bE8825d0f5D514a9a5cBa04B7bF84920</small>
+        </div>
+    `);
+});
+
 // Endpoint de prueba (gratis) para verificar disponibilidad
 app.get('/ping', (req, res) => {
     res.json({ message: "The Gem Smith MCP Engine is Online.", status: "healthy" });
